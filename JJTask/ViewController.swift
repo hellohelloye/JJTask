@@ -56,13 +56,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "pushDetail" {
-//            if let cell = sender as? inforCell {
-//                let indexPath = self.iTableView.indexPath(for:  cell)
-//                let destinationVC: iStockDetailViewController = segue.destination as! iStockDetailViewController
-//                destinationVC.iStockSymbol = self.searchResults[(indexPath?.row)!].symbol!
-//            }
-//        }
+        if segue.identifier == "pushDetail" {
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let destinationVC: DeviceDetailViewController = segue.destination as! DeviceDetailViewController
+            destinationVC.device = self.jj_devices[(indexPath?.row)!]
+        }
     }
 }
 

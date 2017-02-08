@@ -10,13 +10,19 @@ import UIKit
 
 class DeviceDetailViewController: UIViewController {
     @IBOutlet var deviceInfo: UILabel!
+    var device: Device!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.deviceInfo.text = "Device: iPhone 4\n\nOS: ios 8.3\n\nManufacturer: Apple\n\nLast Checked Out: Matt Smith on 3/26/2017 1:52 PM"
+        print(device!)
+        if self.device.isCheckedOut == "\(true)" {
+            self.deviceInfo.text = "Device: \(device.device!)\n\nOS: \(device.os!)\n\nManufacturer: \(device.manufacturer!)\n\nLast Checked Out: \(device.lastCheckedOutBy!) on \(device.lastCheckedOutDate!)"
+        } else {
+            self.deviceInfo.text = "Device: \(device.device!)\n\nOS: \(device.os!)\n\nManufacturer: \(device.manufacturer!)\n\n Available"
+        }
     }
     
     @IBAction func clickCheckinBtn(_ sender: UIButton) {
-        
+        //need requirements
     }
 }
