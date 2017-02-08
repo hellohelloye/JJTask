@@ -1,0 +1,6 @@
+framework module Pods_JJTask {
+  umbrella header "Pods-JJTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
