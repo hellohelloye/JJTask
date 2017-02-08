@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var numbers  = ["one", "two happy life always live love laugh", "three", "four", "five", "six"]
+    var jj_devices = [Device]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManger.sharedInstance.fetchDevices { (deviceArray) in
+            self.jj_devices = deviceArray
+            print(self.jj_devices)
+        }
     }
     
     @IBAction func addDevice(_ sender: UIBarButtonItem) {
